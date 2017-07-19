@@ -1,0 +1,38 @@
+body {
+  background-image: url("DanImages/Background.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: 100% 100%;
+
+}
+
+#employee_title {
+  /* color is just to help with visualizing the div box size. etc.
+  background-color: yellow; */
+  position: relative;
+  left: 55%;
+  width: 300px;
+  margin: -20px 0 0 0;
+}
+
+#login_field {
+  /* color is just to help with visualizing the div box size. etc.
+   background-color: yellow;*/
+  position: relative;
+  left: 55%;
+  width: 300px;
+  padding: 20px 0px;
+}
+
+h1 {
+  font-size: 70px;
+}
+
+span{
+  font-size: 30px;
+}
+
+p{
+  font-size: 30px;
+}
