@@ -9,6 +9,31 @@ body {
   font-size: 25px;
   /*padding-bottom: 100px;*/
 }
+table{
+  border: 2px solid black;
+}
+
+th {
+  background-color: lightgreen;
+}
+th, tr{
+  border: 2px solid black;
+  margin: auto 0;
+  padding: 2px;
+  font-size: 15px;
+}
+
+tr:nth-child(even){
+    background-color: grey;
+}
+
+tr:nth-child(odd){
+    background-color: white;
+}
+
+td{
+  width: 30%;
+}
 
 #time {
   font-size: 25px;
@@ -18,7 +43,7 @@ body {
 #employee {
   font-size: 20px;
   border: 2px solid black;
-  background-color: green;
+  background-color: grey;
   padding: 5px;
 }
 
@@ -30,7 +55,7 @@ body {
 }
 
 .top{
-  background-color: yellow;
+  /*background-color: yellow;*/
   font-size: 25px;
 }
 
@@ -41,7 +66,7 @@ body {
   position: absolute;
   padding: 5px;
   right: 150px;
-  top: 0px
+  top: 0px;
 }
 
 .available-box {
@@ -69,21 +94,21 @@ body {
   flex:1;
   display: flex;
   justify-content: space-between;
-  background-color: orange;
+  /*background-color: orange;*/
 }
 
 .flex-row-2 {
   flex:1;
   display: flex;
   justify-content: space-between;
-  background-color: purple;
+  /*background-color: purple;*/
 }
 
 .flex-row-3 {
   flex:1;
   display: flex;
   justify-content: space-between;
-  background-color: blue;
+  /*background-color: blue;*/
 }
 
 .flex-box {
@@ -97,33 +122,43 @@ body {
 
 .flex-box-menu {
   flex:1;
-  background-color: lightgreen;
-  border: 2px solid black;
+  /*background-color: lightgreen;*/
+  /*border: 2px solid black;*/
   display: flex;
   flex-direction: column;
-  margin: 10px;
+
 }
 
 .flex-box-status {
   flex:1;
   border: 2px solid black;
   margin: 10px;
-  background-color: #845050
+  background-color: darkgreen;
 }
 
 .flex-box-reserve {
   flex:1;
   border: 2px solid black;
   margin: 10px;
-  background-color: #845050
+  background-color: darkgreen;
 }
 
 .flex-button {
   flex:1;
-  font-size: 45px;
+  font-size: 30px;
+  font-weight: bold;
   text-align: center;
   vertical-align: middle;
   line-height: 60px;
   background-color: #502E2E;
   border: 2px solid black;
+  margin: 4px;
+}
+
+.flex-title{
+
+}
+.flex-list{
+  flex:1;
+  /*background-color: pink;*/
 }
