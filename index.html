@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<style type="text/css">
 		@import url('https://fonts.googleapis.com/css?family=Bellefair|Lemonada|Lobster');
+
 		body, html {
 			height: 100%;
 		}
@@ -55,11 +56,11 @@
 
 	</header>
 
-	<!--Make reservation modal-->
+	<!--Make reservation modal-->	
 	<div class="w3-container">
 	  <div id="id01" class="w3-modal w3-animate-opacity">
 		<div class="w3-modal-content w3-card-4 w3-animate-zoom">
-		  <header class="w3-container w3-teal">
+		  <header class="w3-container w3-teal"> 
 	   		<span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-teal w3-display-topright">&times;</span>
 	   		<h2>Make Reservation</h2>
 		  </header>
@@ -69,7 +70,7 @@
 		   <button class="tablink w3-bar-item w3-button" onclick="openReservation(event, 'table')">Table Selection</button>
 		   <button class="tablink w3-bar-item w3-button" onclick="openReservation(event, 'info')">Reservation Details</button>
 		   <button class="tablink w3-bar-item w3-button" onclick="openReservation(event, 'reservConfirm')">Reservation Confirmation</button>
-
+		  
 		  </div>
 
 		<!--Tab 1 -->
@@ -77,9 +78,10 @@
 		  	<div class="w3-row">
 			    <div class="w3-col s4">
 				  <div class="w3-brown w3-border w3-border-dark-grey"><p>Table 1</p><span class="w3-right w3-tag w3-green w3-round">AVAILIABLE</span></div>
-				  <img src="http://i738.photobucket.com/albums/xx30/pushcartonlinellc/pushcartonlinellc1/jan2013_listings/MD-0003-GG_zpsf61b7287.jpg" style="height: 200px; width: 200px">
+				  <img src="http://i738.photobucket.com/albums/xx30/pushcartonlinellc/pushcartonlinellc1/jan2013_listings/MD-0003-GG_zpsf61b7287.jpg" 
+				  style="height: 200px; width: 200px">
 				</div>
-
+				
 				  <div class="w3-col s4">
 				    <div class="w3-brown w3-border w3-border-dark-grey"><p>Table 2</p><span class="w3-right w3-tag w3-green w3-round">AVAILIABLE</span></div>
 				    <img src="http://i738.photobucket.com/albums/xx30/pushcartonlinellc/pushcartonlinellc1/jan2013_listings/MD-0003-GG_zpsf61b7287.jpg" style="height: 200px; width: 200px">
@@ -134,16 +136,17 @@
 		<span class="w3-button w3-display-bottomright">Make Reservation</span>
 		-->
 	</div>
-
+ 
 </div>
 </div>
 </div>
 
-	<!-- Takeout & delivery modal -->
+
+	<!-- Takeout & delivery modal -->	
 	<div class="w3-container">
 	  <div id="id02" class="w3-modal w3-animate-opacity">
 		<div class="w3-modal-content w3-card-4 w3-animate-zoom">
-		  <header class="w3-container w3-teal">
+		  <header class="w3-container w3-teal"> 
 	   		<span onclick="document.getElementById('id02').style.display='none'" class="w3-button w3-teal w3-display-topright">&times;</span>
 	   		<h2>Takeout / Delivery</h2>
 		  </header>
@@ -155,7 +158,7 @@
 		   <button class="tablink w3-bar-item w3-button" onclick="openReservation(event, 'payment')">Payment Options</button>
 		  </div>
 
-		<!-- ******************************************Menu tab. Change menu prices to input ***************************************************************************************************************************-->
+		<!-- ******************************************Menu tab*****************************************************************************************-->
 		<div id="delivMenu" class="w3-container city">
 		  <div class="w3-container w3-black">
 		  <h1>Starters</h1>
@@ -197,36 +200,30 @@
 			  <h5 id="cocktails" onclick="addToCheckout(this)">Cocktails<button type="submit" class="w3-button w3-small w3-right w3-orange w3-border w3-border-black w3-round w3-ripple">Add to Order</button><span class="w3-tag w3-small w3-center w3-yellow w3-round"><b>$6</b></span></h5>
 			  <h5 id="juices" onclick="addToCheckout(this)">Juices<button type="submit" class="w3-button w3-small w3-right w3-orange w3-border w3-border-black w3-round w3-ripple">Add to Order</button><span class="w3-tag w3-small w3-center w3-yellow w3-round"><b>$6</b></span></h5>
 			</div>
-		</div>-->
 		</div>
 		<!-- Tab 4 add ID for quantity, name and price-->
 		<div id="delivCheckout" class="w3-container city">
 			<div class="w3-container w3-responsive">
-				<table class="w3-table-all w3-centered" id = "itemlist">
+				<table class="w3-table-all w3-centered" id="itemlist">
 				  <tr class="w3-yellow">
 				  	<th>Item Name</th>
 				  	<th>Quantity</th>
 				  	<th>Price</th>
 				  </tr>
-				  <!--
-				  <tr>
-				  	<td><input class="itemname" type="text" name="item" value="burger"></td>
-				  	<td><input class="itemquantity" type="number" name="quantity" value="1"></td>
-				  	<td><input class="itemprice" type="number" name="price" value="6"></td>
+				  <!--<tr>
+				  	<td><input type="text" name="item" value="burger"></td>
+				  	<td><input type="number" name="quantity" value="2"></td>
 				  </tr>
 				  <tr>
-				  	<td><input class="itemname" type="text" name="item" value="pizza"></td>
-				  	<td><input class="itemquantity" type="number" name="quantity" value="1"></td>
-				  	<td><input class="itemprice" type="number" name="price" value="6"></td>
+				  	<td><input type="text" name="item" value="pizza"></td>
+				  	<td><input type="number" name="quantity" value="1"></td>
 				  </tr>
 				  <tr>
-				  	<td><input class="itemname" type="text" name="item" value="pasta"></td>
-				  	<td><input class="itemquantity" type="number" name="quantity" value="1"></td>
-				  	<td><input class="itemprice" type="number" name="price" value="6"></td>
-				  </tr>
-				  -->
+				  	<td><input type="text" name="item" value="pasta"></td>
+				  	<td><input type="number" name="quantity" value="1"></td>
+				  </tr>-->
 				</table>
-				<button type="submit" onclick="calcOrderTotal()" class="w3-button w3-small w3-right w3-red w3-border w3-border-black w3-round w3-ripple">Order Total</button>
+				<button type="submit" onclick="calcOrderTotal()" class="w3-button w3-small w3-right w3-red w3-border w3-border-black w3-round w3-ripple">Order Total</button> 
 			</div>
 		</div>
 
@@ -234,35 +231,41 @@
 		<!-- Tab 5 -->
 		<div id="payment" class="w3-container city">
 			<div class="w3-container w3-responsive">
-			<h1>Payment Details</h1>
-			<img class="img-responsive pull-right" src="http://i76.imgup.net/accepted_c22e0.png">
+			  <div class="w3-row">
+			  <div class="w3-col s4">
+				<h1>Payment Details</h1>
+			  </div>
+			  <div class="w3-col s4">
+				<img class="img-responsive pull-right" src="http://i76.imgup.net/accepted_c22e0.png">
+			  </div>
+			  </div>
 			<div class="w3-row">
 			  <div class="w3-col s4">
-				<label>CARD NUMBER</label>
-				<input type="tel" name="cardNumber" placeholder="Valid Card Number" autocomplete="cc-number" required autofocus>
+				<label><b>CARD NUMBER</b></label>
+				<input type="tel" class="w3-input w3-border" name="cardNumber" placeholder="Valid Card Number" autocomplete="cc-number" required autofocus>
 			  </div>
 			</div>
 			<div class="w3-row">
 			  <div class="w3-col s4">
-				<label for="cardExpiry">EXPIRATION DATE</label>
-				<input type="tel" name="cardExpiry" placeholder="MM / YY" autocomplete="cc-exp" required>
+				<label for="cardExpiry"><b>EXPIRATION DATE</b></label>
+				<input type="tel" class="w3-input w3-border" name="cardExpiry" placeholder="MM / YY" autocomplete="cc-exp" required>
 			  </div>
-			  <div class="w3-col s4">
-			  	<label for="cardCVC">CV CODE</label>
-			  	<input type="tel" name="cardCVC" placeholder="CVC" autocomplete="cc-csc" required>
+			  <div class="w3-col s4 w3-right">
+			  	<label for="cardCVC"><b>CV CODE</b></label>
+			  	<input type="tel" class="w3-input w3-border" name="cardCVC" placeholder="CVC" autocomplete="cc-csc" required>
 			  </div>
 			</div>
 
 			<div class="w3-row">
 			  <div class="w3-col s4">
-			  <label for="couponCode">COUPON CODE</label>
-			  <input type="text" name="couponCode">
+			  <label for="couponCode"><b>COUPON CODE</b></label>
+			  <input type="text" class="w3-input w3-border" name="couponCode">
 			  </div>
 			</div>
 			<div class="w3-container w3-center">
-			  <button class="w3-button w3-small w3-blue-grey w3-ripple">Order</button>
+				<button class="w3-button w3-small w3-blue-grey w3-ripple">Order</button>
 			</div>
-				
+			
 			</div>
 			</div>
 			</div>
@@ -271,7 +274,7 @@
 		</div>
 		</div>
 
-	<!-- Menu
+	<!--Open Menu
 	<div class="w3-container w3-black w3-padding-64 w3-large" id="menu">
   		<div class="w3-content">
   			<h1 class="w3-center w3-jumbo" style="margin-bottom:64px">THE MENU</h1>
@@ -286,70 +289,90 @@
         	<div class="w3-col s4 tablink w3-padding-large w3-hover-red">Dessert</div>
       		</a>
     		</div>
+
     		<div id="Appetizers" class="w3-container menu w3-padding-32 w3-white">
     			<h1><b>Chicken Wings</b> <span class="w3-tag w3-red w3-round">Hot!</span><span class="w3-right w3-tag w3-dark-grey w3-round">$7</span></h1>
 				<p class="w3-text-grey">Flavors: BBQ, honey, or ranch</p>
 			    <hr>
+			   
 			    <h1><b>Spring Rolls</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$5</span></h1>
 			    <p class="w3-text-grey">Filled with all you favorite veggies!</p>
 			    <hr>
+			      
 			    <h1><b>Dumplings</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$7</span></h1>
 			    <p class="w3-text-grey">Type: Chicken, beef, or tofu</p>
 			    <hr>
+
 			    <h1><b>Fruit Salad</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$10</span></h1>
 			    <p class="w3-text-grey">Fresh tomatoes, lettuce, basil, fresh pineapple, apples, tropical mango, amish honey</p>
 			    <hr>
+
 			    <h1><b>Mozzarela Sticks</b><span class="w3-right w3-tag w3-dark-grey w3-round">$7</span></h1>
 			    <p class="w3-text-grey">Crispy, lightly heated served with fresh marinara sauce</p>
 			    <hr>
+
 			    <h1><b>Soup</b> <span class="w3-tag w3-grey w3-round">New</span><span class="w3-right w3-tag w3-dark-grey w3-round">$10</span></h1>
 			    <p class="w3-text-grey">Chicken, shrimp, lobster, or tomato</p>
 		    </div>
+
 		    <div id="Main Course" class="w3-container menu w3-padding-32 w3-white">
 			    <h1><b>Lasagna</b> <span class="w3-tag w3-grey w3-round">Popular</span> <span class="w3-right w3-tag w3-dark-grey w3-round">$15</span>
 			    </h1>
 			    <p class="w3-text-grey">Secret sauce, mozzarella, parmesan, ground beef</p>
 			    <hr>
+			   
 			    <h1><b>Ravioli</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$16</span></h1>
 			    <p class="w3-text-grey">Ravioli filled with cottage cheese</p>
 			    <hr>
+			      
 			    <h1><b>Rib-eye steak</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$30</span></h1>
 			    <p class="w3-text-grey">Extra thick &amp; juicy marinated with your choice of bbq or hot sauce</p>
 			    <hr>
+
 			    <h1><b>Seafood pasta</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$25</span></h1>
 			    <p class="w3-text-grey">Salmon, shrimp, lobster, garlic</p>
 			</div>
+
 			<div id="Dessert" class="w3-container menu w3-padding-32 w3-white">
 			    <h1><b>Ice-cream</b> <span class="w3-tag w3-grey w3-round">Seasonal</span><span class="w3-right w3-tag w3-dark-grey w3-round">$5</span></h1>
 			    <p class="w3-text-grey">chocolate-mint, vanilla-ice, choco-fudge, peanut paradise, blue moon</p>
 			    <hr>
+			   
 			    <h1><b>Cake</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$7</span></h1>
 			    <p class="w3-text-grey">raspberry-velvet, NY cheesecake, blackberry, fruit</p>
 			    <hr>
+			      
 			    <h1><b>Pudding</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$9</span></h1>
 			    <p class="w3-text-grey">chocolate, banana, coconut</p>
 			    <hr>
+			      
 			    <h1><b>Bubble Tea</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$4</span></h1>
 			    <p class="w3-text-grey">Taro, mango, strawberry, lychee</p>
     		</div><br>
+
 		</div>
 	</div>
 	-->
 
-	<!--other Reservation style
+	<!--other Reservation style 
 	<div class="w3-container w3-blue-grey w3-padding-64 w3-grayscale-min w3-xlarge" id="reservation">
   		<div class="w3-content">
+
   			<h1 class="w3-center w3-jumbo" style="margin-bottom:64px">RESERVATION</h1>
+    	
     		<form>
     			<div class="w3-row w3-section">
+				
 				  <input type="text" name="usr" placeholder="Name" required>
 				</div>
 				<div class="w3-row w3-section">
 				  <input type="number" name="guests" placeholder="Number of guests" required>
 				</div>
+
 				<div class="w3-row w3-section">
 					<input type="datetime-local" name="date" placeholder="Date and time" required="date" value="2017-07-21T20:00">
 				</div>
+
 				<button class="w3-button w3-section w3-red w3-ripple">Complete Reservation</button>
 			</form>
 		</div>
@@ -360,7 +383,7 @@
   		<div class="w3-content">
 	    <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">ABOUT</h1>
 	    <p>Come empty, leave full!</p>
-
+		
 		<h1><b>Opening Hours</b></h1>
 
 		<div class="w3-row">
@@ -384,10 +407,15 @@
 	</footer>
 
 <script type="text/javascript">
+//Login alert feature
+window.alert("Login credentials accepted. Welcome to Bronx Tapas. Please click OK to proceed");
+
 //Time stamp
 document.getElementById('time-stamp').innerHTML = Date();
+
 //Make Reservation modal
 document.getElementsByClassName("tablink")[0].click();
+
 function openReservation(evt, reserveInfo) {
   var i, x, tablinks;
   x = document.getElementsByClassName("city");
@@ -401,6 +429,7 @@ function openReservation(evt, reserveInfo) {
   document.getElementById(reserveInfo).style.display = "block";
   evt.currentTarget.classList.add("w3-light-grey");
 }
+
 //Menu tabs
 function openMenu(evt, menuName) {
 	var i, x, tablinks;
@@ -416,11 +445,12 @@ function openMenu(evt, menuName) {
   	evt.currentTarget.firstElementChild.className += " w3-red";
   	}
 document.getElementById("myLink").click();
-//Google Maps
+
+//Google Maps 
 function myMap() {
 	myCenter = new google.maps.LatLng(40.803343, -73.910410);
 	var mapOptions = {
-		center:myCenter,
+		center:myCenter, 
 		zoom:14, scrollwheel: false, draggable: false, mapTypeId:google.maps.MapTypeId.ROADMAP
 	};
 	var map = new google.maps.Map(document.getElementById("googleMap"),mapOptions);
@@ -429,6 +459,7 @@ function myMap() {
 	});
 	marker.setMap(map);
 	}
+
 function calcOrderTotal() {
 	//alert("test");
 	var ordertotal = 0;
@@ -472,7 +503,7 @@ function addToCheckout(ele){
     namecell.getElementsByClassName("itemname")[0].value = id;
   }  
 }
-	
+
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0o8l3ooUMX8PC_EpezaSiGpTmHkPlzMg&callback=myMap"></script>
 </body>
