@@ -493,18 +493,30 @@ function calcOrderTotal() {
 
 function addToCheckout(ele){
   var iList = document.getElementById("itemlist");
-  var row = iList.insertRow();
-  var namecell = row.insertCell(0);
-  var quantitycell = row.insertCell(1);
-  var pricecell = row.insertCell(2);
+  var itemN = document.getElementsByClassName("itemname");
   var id = ele.id;
-  console.log('area element id = ' + id);
-  namecell.innerHTML = "<input class='itemname' type='text' name='item' value='pasta'>";
-  quantitycell.innerHTML = "<input class='itemquantity' type='number' name='quantity' value='1'>";
-  pricecell.innerHTML = "<input class='itemprice' type='number' name='price' value='6'>";
-  namecell.getElementsByClassName("itemname")[0].value = id;
-  
+  var incart = false;
+  for(x = 0; x < itemN.length ; x++){
+    console.log("This for loop");
+    console.log(itemN.length);
+    if(itemN[x].value == id){
+      alert("This item is already in the cart. Please change quantity in the checkout area.")
+      incart = true;
+    }
+  }
+  if (!incart){
+    var row = iList.insertRow();
+    var namecell = row.insertCell(0);
+    var quantitycell = row.insertCell(1);
+    var pricecell = row.insertCell(2);
+    console.log('area element id = ' + id);
+    namecell.innerHTML = "<input class='itemname' type='text' name='item' value='pasta'>";
+    quantitycell.innerHTML = "<input class='itemquantity' type='number' name='quantity' value='1'>";
+    pricecell.innerHTML = "<input class='itemprice' type='number' name='price' value='6'>";
+    namecell.getElementsByClassName("itemname")[0].value = id;
+  }  
 }
+	
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0o8l3ooUMX8PC_EpezaSiGpTmHkPlzMg&callback=myMap"></script>
 </body>
