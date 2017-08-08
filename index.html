@@ -7,7 +7,6 @@
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<style type="text/css">
 		@import url('https://fonts.googleapis.com/css?family=Bellefair|Lemonada|Lobster');
-
 		body, html {
 			height: 100%;
 		}
@@ -111,25 +110,48 @@
 		  <div id="info" class="w3-container city">
 		   <form>
 				<div class="w3-row w3-section">
-					<input type="text" name="usr" placeholder="Name" required>
+					<input oninput="updateValueresName()" id="reservationnameid" type="text" name="usr" placeholder="Name" required>
 				</div>
 				<div class="w3-row w3-section">
-					<input type="number" name="guests" placeholder="# of guests">
+					<input oninput="updateValueresNumb()" id="reservationNumbid" type="number" name="guests" placeholder="# of guests">
 				</div>
 				<div class="w3-row w3-section">
-					<input type="datetime-local" name="date" placeholder="Date and time" required="date" value="2017-07-21T20:00">
+					<input oninput="updateValueresTime()" id="reservationTimeid" type="datetime-local" name="date" placeholder="Date and time" required="date" value="2017-07-21T20:00">
 				</div>
 		  </form>
 		  </div>
 
 		<!-- Tab 3 -->
 		<div id="reservConfirm" class="w3-container city">
-		  <h1 class="w3-center">Reservation is Confirmed!</h1>
+		  <div class="w3-container w3-responsive">
+				<table class="w3-table-all w3-centered" id="reservationlist">
+				  <tr class="w3-yellow">
+				  	<th>Party Name</th>
+				  	<th>Number of Guests</th>
+				  	<th>Date and Time</th>
+				  </tr>
+				  <!--
+				  <tr>
+				  	<td><input type="text" name="partyName" value="burger"></td>
+				  	<td><input type="number" name="numbOfGuests" value="2"></td>
+				  	<td><input type="datetime-local" name="dateTime" value=""></td>
+
+				  </tr>
+				  <tr>
+				  	<td><input type="text" name="item" value="pizza"></td>
+				  	<td><input type="number" name="quantity" value="1"></td>
+				  </tr>
+				  <tr>
+				  	<td><input type="text" name="item" value="pasta"></td>
+				  	<td><input type="number" name="quantity" value="1"></td>
+				  </tr>-->
+				</table>
+			</div>
 		</div>
 
 
   	<div class="w3-container w3-teal">
-		<button class="w3-button w3-section w3-right w3-green w3-ripple" type="submit" onclick="location.href='#menu'">Confirm Reservation</button>
+		<button onclick="addToReservation(this)" class="w3-button w3-section w3-right w3-green w3-ripple" type="submit" onclick="location.href='#menu'">Confirm Reservation</button>
 		<button class="w3-button w3-section w3-left w3-red w3-ripple" type="submit" onclick="document.getElementById('id01').style.display='none'">Cancel</button>
 		<!--
 		<span class="w3-button w3-display-bottomleft">Take Out/Delivery</span>
@@ -289,7 +311,6 @@
         	<div class="w3-col s4 tablink w3-padding-large w3-hover-red">Dessert</div>
       		</a>
     		</div>
-
     		<div id="Appetizers" class="w3-container menu w3-padding-32 w3-white">
     			<h1><b>Chicken Wings</b> <span class="w3-tag w3-red w3-round">Hot!</span><span class="w3-right w3-tag w3-dark-grey w3-round">$7</span></h1>
 				<p class="w3-text-grey">Flavors: BBQ, honey, or ranch</p>
@@ -302,19 +323,15 @@
 			    <h1><b>Dumplings</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$7</span></h1>
 			    <p class="w3-text-grey">Type: Chicken, beef, or tofu</p>
 			    <hr>
-
 			    <h1><b>Fruit Salad</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$10</span></h1>
 			    <p class="w3-text-grey">Fresh tomatoes, lettuce, basil, fresh pineapple, apples, tropical mango, amish honey</p>
 			    <hr>
-
 			    <h1><b>Mozzarela Sticks</b><span class="w3-right w3-tag w3-dark-grey w3-round">$7</span></h1>
 			    <p class="w3-text-grey">Crispy, lightly heated served with fresh marinara sauce</p>
 			    <hr>
-
 			    <h1><b>Soup</b> <span class="w3-tag w3-grey w3-round">New</span><span class="w3-right w3-tag w3-dark-grey w3-round">$10</span></h1>
 			    <p class="w3-text-grey">Chicken, shrimp, lobster, or tomato</p>
 		    </div>
-
 		    <div id="Main Course" class="w3-container menu w3-padding-32 w3-white">
 			    <h1><b>Lasagna</b> <span class="w3-tag w3-grey w3-round">Popular</span> <span class="w3-right w3-tag w3-dark-grey w3-round">$15</span>
 			    </h1>
@@ -328,11 +345,9 @@
 			    <h1><b>Rib-eye steak</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$30</span></h1>
 			    <p class="w3-text-grey">Extra thick &amp; juicy marinated with your choice of bbq or hot sauce</p>
 			    <hr>
-
 			    <h1><b>Seafood pasta</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$25</span></h1>
 			    <p class="w3-text-grey">Salmon, shrimp, lobster, garlic</p>
 			</div>
-
 			<div id="Dessert" class="w3-container menu w3-padding-32 w3-white">
 			    <h1><b>Ice-cream</b> <span class="w3-tag w3-grey w3-round">Seasonal</span><span class="w3-right w3-tag w3-dark-grey w3-round">$5</span></h1>
 			    <p class="w3-text-grey">chocolate-mint, vanilla-ice, choco-fudge, peanut paradise, blue moon</p>
@@ -349,7 +364,6 @@
 			    <h1><b>Bubble Tea</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$4</span></h1>
 			    <p class="w3-text-grey">Taro, mango, strawberry, lychee</p>
     		</div><br>
-
 		</div>
 	</div>
 	-->
@@ -357,7 +371,6 @@
 	<!--other Reservation style 
 	<div class="w3-container w3-blue-grey w3-padding-64 w3-grayscale-min w3-xlarge" id="reservation">
   		<div class="w3-content">
-
   			<h1 class="w3-center w3-jumbo" style="margin-bottom:64px">RESERVATION</h1>
     	
     		<form>
@@ -368,11 +381,9 @@
 				<div class="w3-row w3-section">
 				  <input type="number" name="guests" placeholder="Number of guests" required>
 				</div>
-
 				<div class="w3-row w3-section">
 					<input type="datetime-local" name="date" placeholder="Date and time" required="date" value="2017-07-21T20:00">
 				</div>
-
 				<button class="w3-button w3-section w3-red w3-ripple">Complete Reservation</button>
 			</form>
 		</div>
@@ -409,13 +420,10 @@
 <script type="text/javascript">
 //Login alert feature
 window.alert("Login credentials accepted. Welcome to Bronx Tapas. Please click OK to proceed");
-
 //Time stamp
 document.getElementById('time-stamp').innerHTML = Date();
-
 //Make Reservation modal
 document.getElementsByClassName("tablink")[0].click();
-
 function openReservation(evt, reserveInfo) {
   var i, x, tablinks;
   x = document.getElementsByClassName("city");
@@ -429,7 +437,6 @@ function openReservation(evt, reserveInfo) {
   document.getElementById(reserveInfo).style.display = "block";
   evt.currentTarget.classList.add("w3-light-grey");
 }
-
 //Menu tabs
 function openMenu(evt, menuName) {
 	var i, x, tablinks;
@@ -459,7 +466,6 @@ function myMap() {
 	});
 	marker.setMap(map);
 	}
-
 function calcOrderTotal() {
 	//alert("test");
 	var ordertotal = 0;
@@ -477,7 +483,6 @@ function calcOrderTotal() {
 	//ordertotal = ordertotal + (ordertotal * tax);
 	alert("total order price: $" + ordertotal);
 }
-
 function addToCheckout(ele){
   var iList = document.getElementById("itemlist");
   var itemN = document.getElementsByClassName("itemname");
@@ -487,7 +492,7 @@ function addToCheckout(ele){
     console.log("This for loop");
     console.log(itemN.length);
     if(itemN[x].value == id){
-      alert("This item is already in the cart. Please change quantity in the checkout area.")
+      alert("This item is already in the cart. Please change quantity in the checkout area.");
       incart = true;
     }
   }
@@ -502,6 +507,54 @@ function addToCheckout(ele){
     pricecell.innerHTML = "<input class='itemprice' type='number' name='price' value='6'>";
     namecell.getElementsByClassName("itemname")[0].value = id;
   }  
+}
+
+function updateValueresName() {
+    var x = document.getElementById("reservationnameid").value;
+    document.getElementById("reservationnameid").value = x;
+    console.log(x);
+}
+
+function updateValueresNumb() {
+    var x = document.getElementById("reservationNumbid").value;
+    document.getElementById("reservationNumbid").value = x;
+    console.log(x);
+}
+
+function updateValueresTime() {
+    var x = document.getElementById("reservationTimeid").value;
+    document.getElementById("reservationTimeid").value = x;
+    console.log(x);
+}
+
+function addToReservation(ele){
+	console.log("in add Reservation");
+	var rList = document.getElementById("reservationlist");
+  	var reserveN = document.getElementsByClassName("reservationname");
+  	var id = ele.id;
+  	var incart = false;
+  	for(x = 0; x < reserveN.length ; x++){
+   		console.log("This for loop");
+    	console.log(reserveN.length);
+    	if(reserveN[x].value == id){
+      		alert("This item is already in the cart. Please change quantity in the checkout area.");
+      		incart = true;
+    	}
+  	}
+
+  	if (!incart){
+    var row = rList.insertRow();
+    var namecell = row.insertCell(0);
+    var partyNumbcell = row.insertCell(1);
+    var dateTimecell = row.insertCell(2);
+    console.log('area element id = ' + id);
+    namecell.innerHTML = "<input class='reservationname' type='text' name='item' value='pasta'>";
+    partyNumbcell.innerHTML = "<input class='reservationNumb' type='number' name='quantity' value='1'>";
+    dateTimecell.innerHTML = "<input class='reservationTime' type='datetime-local' name='price' value='6'>";
+    namecell.getElementsByClassName("reservationname")[0].value = document.getElementById("reservationnameid").value;
+    partyNumbcell.getElementsByClassName("reservationNumb")[0].value = document.getElementById("reservationNumbid").value;
+    dateTimecell.getElementsByClassName("reservationTime")[0].value = document.getElementById("reservationTimeid").value;
+  }
 }
 
 </script>
