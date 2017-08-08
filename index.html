@@ -254,6 +254,20 @@
 				<div class="w3-small w3-left w3-section">
 					<h3>Tax: <span id="taxLocation">&nbsp;&nbsp;&nbsp;&nbsp;</span></h3>					
 				</div>
+
+				<div class="w3-small w3-left w3-section">
+					<h3>Tip: <span id="tipLocation">&nbsp;&nbsp;&nbsp;&nbsp;</span></h3>
+					<p>Select percentage to Tip .</p>
+					<select id="tipSelector">
+					  <option value="0"> no tip
+					  <option value=".15">15%
+					  <option value=".18">18%
+					  <option value=".20">20%
+					</select>				
+				</div>
+
+
+
 				<div class="w3-small w3-left w3-section">
 					<h3>Total: <span id="totalLocation">&nbsp;&nbsp;&nbsp;&nbsp;</span></h3>					
 				</div>
@@ -484,6 +498,8 @@ function calcOrderTotal() {
 	var subtotal = 0;
 	var itemP = document.getElementsByClassName("itemprice");
 	var itemN = document.getElementsByClassName("itemname");
+	var tipPercentage = document.getElementById("tipSelector").value;
+	var tip = 0;
 	var tax = 0.08875;
 	var taxtotal = 0;
 	//alert("test");
@@ -503,10 +519,13 @@ function calcOrderTotal() {
 	}
 	taxtotal = (subtotal * tax).toFixed(2);
 	document.getElementById("taxLocation").innerHTML = taxtotal.toString();
-	ordertotal = (parseFloat(subtotal) + parseFloat(taxtotal)).toFixed(2);
+	tip = subtotal * tipPercentage;
+	document.getElementById("tipLocation").innerHTML = tip.toString();
+	ordertotal = (parseFloat(subtotal) + parseFloat(taxtotal) + parseFloat(tip)).toFixed(2);
 	document.getElementById("totalLocation").innerHTML = ordertotal.toString();
 	//alert("total order price: $" + ordertotal);
 }
+
 function addToCheckout(ele){
   var iList = document.getElementById("itemlist");
   var itemN = document.getElementsByClassName("itemname");
