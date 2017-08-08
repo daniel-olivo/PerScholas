@@ -245,6 +245,18 @@
 				  	<td><input type="number" name="quantity" value="1"></td>
 				  </tr>-->
 				</table>
+				<div class="w3-small w3-left w3-section">
+					<h3>Subtotal: <span id="subtotalLocation">&nbsp;&nbsp;&nbsp;&nbsp;</span></h3>					
+				</div>
+				<div class="w3-small w3-left w3-section">
+					<h3>Discount: <span id="discountLocation">&nbsp;&nbsp;&nbsp;&nbsp;</span></h3>					
+				</div>
+				<div class="w3-small w3-left w3-section">
+					<h3>Tax: <span id="taxLocation">&nbsp;&nbsp;&nbsp;&nbsp;</span></h3>					
+				</div>
+				<div class="w3-small w3-left w3-section">
+					<h3>Total: <span id="totalLocation">&nbsp;&nbsp;&nbsp;&nbsp;</span></h3>					
+				</div>
 				<button type="submit" onclick="calcOrderTotal()" class="w3-button w3-small w3-right w3-red w3-border w3-border-black w3-round w3-ripple">Order Total</button> 
 			</div>
 		</div>
@@ -469,8 +481,11 @@ function myMap() {
 function calcOrderTotal() {
 	//alert("test");
 	var ordertotal = 0;
+	var subtotal = 0;
 	var itemP = document.getElementsByClassName("itemprice");
 	var itemN = document.getElementsByClassName("itemname");
+	var tax = 0.08875;
+	var taxtotal = 0;
 	//alert("test");
 	// each element that is added to order should be given the addedtocart class so it is found by this function
 	var itemQ = document.getElementsByClassName("itemquantity");
@@ -478,10 +493,19 @@ function calcOrderTotal() {
 	for (var i = 0; i < itemN.length; i++) {
 		//alert("inside for loop");
 		//alert(itemQ[i].value);
-		ordertotal += parseInt(itemP[i].value) * parseInt(itemQ[i].value);
+		subtotal += parseInt(itemP[i].value) * parseInt(itemQ[i].value);
 	}
-	//ordertotal = ordertotal + (ordertotal * tax);
-	alert("total order price: $" + ordertotal);
+	document.getElementById("subtotalLocation").innerHTML = subtotal.toString();
+	if(subtotal > 50){
+		console.log("discount applied");
+		subtotal-=5;
+		document.getElementById("discountLocation").innerHTML = -5.00;
+	}
+	taxtotal = (subtotal * tax).toFixed(2);
+	document.getElementById("taxLocation").innerHTML = taxtotal.toString();
+	ordertotal = (parseFloat(subtotal) + parseFloat(taxtotal)).toFixed(2);
+	document.getElementById("totalLocation").innerHTML = ordertotal.toString();
+	//alert("total order price: $" + ordertotal);
 }
 function addToCheckout(ele){
   var iList = document.getElementById("itemlist");
