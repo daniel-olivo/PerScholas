@@ -576,7 +576,9 @@ function calcOrderTotal() {
 		console.log("discount applied");
 		subtotal-=5;
 		document.getElementById("discountLocation").innerHTML = -5.00;
-	}
+	}else{
+	    	document.getElementById("discountLocation").innerHTML = 0.00;
+    	}
 	taxtotal = (subtotal * tax).toFixed(2);
 	document.getElementById("taxLocation").innerHTML = taxtotal.toString();
 	tip = subtotal * tipPercentage;
@@ -596,7 +598,7 @@ function addToCheckout(ele){
     if(itemN[x].value == id){
       alert("This item is already in the cart. Please change quantity in the checkout area.");
       incart = true;
-    }
+    }	 
   }
   if (!incart){
     var row = iList.insertRow();
