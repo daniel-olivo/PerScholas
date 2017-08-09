@@ -569,8 +569,9 @@ function calcOrderTotal() {
 	for (var i = 0; i < itemN.length; i++) {
 		//alert("inside for loop");
 		//alert(itemQ[i].value);
-		subtotal += parseInt(itemP[i].value) * parseInt(itemQ[i].value);
+		subtotal += parseInt(itemP[i].value) * parseInt(itemQ[i].value);		
 	}
+	subtotal = subtotal.toFixed(2);
 	document.getElementById("subtotalLocation").innerHTML = subtotal.toString();
 	if(subtotal > 50){
 		console.log("discount applied");
