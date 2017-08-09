@@ -581,7 +581,7 @@ function calcOrderTotal() {
     	}
 	taxtotal = (subtotal * tax).toFixed(2);
 	document.getElementById("taxLocation").innerHTML = taxtotal.toString();
-	tip = subtotal * tipPercentage;
+	tip = (subtotal * tipPercentage).toFixed(2);
 	document.getElementById("tipLocation").innerHTML = tip.toString();
 	ordertotal = (parseFloat(subtotal) + parseFloat(taxtotal) + parseFloat(tip)).toFixed(2);
 	document.getElementById("totalLocation").innerHTML = ordertotal.toString();
