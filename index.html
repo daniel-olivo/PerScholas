@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<!--To give responsiveness to mobile devices-->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
+
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<!--Bootstrap library-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -43,8 +43,8 @@
 						<label><b>Password</b></label>
 						<input class="w3-input w3-border" type="text" name="pw" placeholder="Enter Password" required>
 						<input class="w3-check w3-margin-top" type="checkbox" checked="checked">Remember me
-						<button class="w3-button w3-block w3-blue w3-section w3-padding" type="submit" onclick="window.location.href='homepage.html'">Login</button>
-						
+						<button class="w3-button w3-block w3-blue w3-section w3-padding" type="submit" onclick="ConfirmUser(this.form)">Login</button>
+
 					</div>
 				</form>
 
@@ -56,15 +56,25 @@
         	</div>
         </div>
     </div>
-    
+
     <audio autoplay>
         <source src="waitin_lobby.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
-	
+
 <script type="text/javascript">
 //Time stamp
 document.getElementById('time-stamp').innerHTML = Date();
+
+function ConfirmUser(form) { /*function to check userid & password*/
+                /*the following code checkes whether the entered userid and password are matching*/
+								if(form.usrname.value == "123" && form.pw.value == "password") {
+                    window.open('homepage.html')/*opens the target page while Id & password matches*/
+                }
+                else {
+                    alert("Error Password or Username")/*displays error message*/
+                }
+            }
 </script>
 </body>
 </html>
