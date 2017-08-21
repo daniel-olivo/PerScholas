@@ -66,15 +66,13 @@
 //Time stamp
 document.getElementById('time-stamp').innerHTML = Date();
 
-function ConfirmUser(form) { /*function to check userid & password*/
-                /*the following code checkes whether the entered userid and password are matching*/
-								if(form.usrname.value == "123" && form.pw.value == "password") {
-                    window.open('homepage.html')/*opens the target page while Id & password matches*/
-                }
-                else {
-                    alert("Error Password or Username")/*displays error message*/
-                }
-            }
+function ConfirmUser(form) { 
+	if(form.usrname.value == "123" && form.pw.value == "password") {
+        	window.open('homepage.html')/*opens the target page while Id & password matches*/
+        } else {
+        	alert("Error Password or Username")/*displays error message*/
+        }
+}
 </script>
 </body>
 </html>
