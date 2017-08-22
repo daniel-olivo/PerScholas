@@ -774,8 +774,8 @@ function calcOrderTotal() {
 	document.getElementById("subtotalLocation").innerHTML = subtotal.toString();
 	if(subtotal > 50){
 		console.log("discount applied");
-		subtotal-=5;
-		document.getElementById("discountLocation").innerHTML = -5.00;
+		subtotal-=10;
+		document.getElementById("discountLocation").innerHTML = -10.00;
 	}else{
 	    	document.getElementById("discountLocation").innerHTML = 0.00;
     	}
