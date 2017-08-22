@@ -811,8 +811,8 @@ function calcTakeOutOrderTotal() {
 	document.getElementById("takeoutsubtotalLocation").innerHTML = subtotal.toString();
 	if(subtotal > 50){
 		console.log("discount applied");
-		subtotal-=5;
-		document.getElementById("takeoutdiscountLocation").innerHTML = -5.00;
+		subtotal-=10;
+		document.getElementById("takeoutdiscountLocation").innerHTML = -10.00;
 	}else{
 	    	document.getElementById("takeoutdiscountLocation").innerHTML = 0.00;
     	}
