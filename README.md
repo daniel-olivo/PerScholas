@@ -7,6 +7,6 @@ Also, if you use command prompt for git make sure you are in the correct folder/
 https://dolivo1980.github.io/PerScholas/
 Nathaniel Townsend
 Daniel Olivio
-Vimal govind
+Vimal Govind
 Zein Kapadia
 Jermanine Fray
