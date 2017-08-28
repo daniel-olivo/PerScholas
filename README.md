@@ -3,6 +3,7 @@
 https://dolivo1980.github.io/PerScholas/
 
 user login: 123
+
 password: password
 
 This project require that the choosen individuals work together to create an online point of sales system.
