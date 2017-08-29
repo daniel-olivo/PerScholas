@@ -141,8 +141,8 @@
 
 
   	<div class="w3-container w3-teal">
-		<button onclick="addToReservation(this)" class="w3-button w3-section w3-right w3-green w3-ripple"
-		type="submit" onclick="location.href='#menu'">Confirm Reservation</button>
+		<button onclick="openReservation(event, 'reservConfirm')" class="w3-button w3-section w3-right w3-green w3-ripple"
+		type="submit" >Next</button>
 		<button class="w3-button w3-section w3-left w3-red w3-ripple"
 		type="submit" onclick="document.getElementById('id01').style.display='none'">Cancel</button>
 	</div>
@@ -909,6 +909,9 @@ function updateValueresTableStatus() {
 		return currentSelected;
 }
 
+function nextTab(){
+
+}
 
 function addToReservation(ele){
 	console.log("in add Reservation");
