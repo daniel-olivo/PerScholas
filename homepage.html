@@ -4,31 +4,12 @@
 	<title>Bronx Tapas</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Using w3 school library -->
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-	<style type="text/css">
-		@import url('https://fonts.googleapis.com/css?family=Bellefair|Lemonada|Lobster|Tangerine');
-		body, html {
-			height: 100%;
-		}
-		.menu {
-			display: none;
-		}
-		.restimg {
-			background-repeat: no-repeat;
-		    background-size: cover;
-		    background-image: url("http://www.ghmhotels.com/wp-content/uploads/CMU-Dining-The-Beach-Restaurant-Interior.jpg");
-		    min-height: 100%;
-		}
-		#login-right {
-			float: right;
-		}
-		#homeTitle {
-			font-size:100px;
-			font-family: Bellefair;
-			text-shadow: 2px 2px 4px #000000;
-		}
-	</style>
+
+	<link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 <!--Navigation Bar-->
 	<div class="w3-top w3-hide-small">
@@ -40,10 +21,8 @@
 	    class="w3-bar-item w3-button w3-border-right" style="width:25%">Reserve Table</button>
 	    <button onclick="document.getElementById('id02').style.display='block'"
 	    class="w3-bar-item w3-button w3-border-right" style="width:25%">Takeout &amp; Delivery</button>
-	    <!--
-	    <button onclick="document.getElementById('id04').style.display='block'"
-	    class="w3-bar-item w3-button w3-border-right" style="width:20%">Order History</button>
-	-->
+	    <!-- <button onclick="document.getElementById('id04').style.display='block'"
+	    class="w3-bar-item w3-button w3-border-right" style="width:20%">Order History</button> -->
 	  </div>
 	  <button type="submit" class="w3-btn w3-red w3-round w3-ripple w3-right" onclick="confirmLogOut()">Logout</button>
   	</div>
@@ -52,7 +31,7 @@
 	<div class="w3-container-fluid w3-grayscale-min restimg">
 	<header id="home">
   		<div class="w3-display-bottomleft w3-padding">
-    		<span class="w3-tag w3-large">Grand Opening 09/15/2017</span>
+    		<span class="w3-tag w3-large">Grand Opening mm/dd/yyyy</span>
   		</div>
   		<div class="w3-display-middle w3-center">
 	    	<span class="w3-text-white w3-hide-small" id="homeTitle">BRONX<br>TAPAS</span>
@@ -143,8 +122,8 @@
 
 
   	<div class="w3-container w3-teal">
-		<button onclick="addToReservation(this); openReservation(event, 'reservConfirm')" 
-		class="w3-button w3-section w3-right w3-green w3-ripple" type="submit" >Next</button>
+		<button onclick="openReservation(event, 'reservConfirm')" class="w3-button w3-section w3-right w3-green w3-ripple"
+		type="submit" >Next</button>
 		<button class="w3-button w3-section w3-left w3-red w3-ripple"
 		type="submit" onclick="document.getElementById('id01').style.display='none'">Cancel</button>
 	</div>
@@ -172,6 +151,8 @@
 		   onclick="openReservation(event, 'tableMenu')">Menu</button>
 		  <button class="tablink w3-bar-item w3-button"
 		   onclick="openReservation(event, 'tableCheckout')">Order Checkout</button>
+		  <button class="tablink w3-bar-item w3-button"
+		   onclick="openReservation(event, 'tableConfirm')">Table Confirmation</button>
 		</div>
 
 		<!--Tab 1 Reserve Table Section-->
@@ -195,6 +176,13 @@
 		    	<option value="2" style="background-color:red">Unavailable</option>
 		    </select>
 		  </div>
+		  </div>
+
+		  <div class="w3-row-padding">
+		    <div class="w3-half">
+		      <h4># of Seats</h4>
+		      <input type="number" name="seats">
+		    </div>
 		  </div>
 
 		<div class="w3-container w3-teal">
@@ -356,8 +344,19 @@
 				</div>
 				</div>
 
-		<!--add footer of modal here -->
-		
+		<!-- Tab 4 Table Confirmation -->
+		<div id="tableConfirm" class="w3-container city">
+		  <div class="w3-container w3-responsive">
+		    <h4>Click Table Confirmation to Confirm table</h4>
+		  </div>
+
+		<div class="w3-container w3-teal">
+		  <button onclick class="w3-button w3-section w3-right w3-green w3-ripple"
+		  type="submit">Complete Table Confirmation</button>
+		  <button class="w3-button w3-section w3-left w3-red w3-ripple"
+		  type="submit" onclick="document.getElementById('id01').style.display='none'">Cancel</button>
+		</div>
+		</div>
 
 		</div>
 		</div>
@@ -558,8 +557,8 @@
 			<div class="w3-row">
 
 			  <div class="w3-col s4">
-				<label for="cardnum"><b>CARD NUMBER</b></label>
-				<input type="number" name="cardnum" min="1" max="10" class="w3-input w3-border"
+				<label><b>CARD NUMBER</b></label>
+				<input type="number" class="w3-input w3-border" name="cardNumber" placeholder="Valid Card Number"
 				autocomplete="cc-number" required autofocus>
 			  </div>
 
@@ -568,12 +567,12 @@
 
 			  <div class="w3-col s4">
 				<label for="cardExpiry"><b>EXPIRATION DATE</b></label>
-				<input type="date" class="w3-input w3-border" name="cardExpiry" placeholder="MM / YY"
+				<input type="tel" class="w3-input w3-border" name="cardExpiry" placeholder="MM / YY"
 				autocomplete="cc-exp" required>
 			  </div>
 			  <div class="w3-col s4 w3-right">
-			  	<label for="cvc"><b>CV CODE</b></label>
-			  	<input type="number" min="1" max="3" class="w3-input w3-border" name="cvc" placeholder="CVC"
+			  	<label for="cardCVC"><b>CV CODE</b></label>
+			  	<input type="text" maxlength="3" class="w3-input w3-border" name="cardCVC" placeholder="CVC"
 			  	autocomplete="cc-csc" required>
 			  </div>
 
@@ -582,7 +581,7 @@
 			<div class="w3-row">
 			  <div class="w3-col s4">
 			  <label for="couponCode"><b>COUPON CODE</b></label>
-			  <input type="text" class="w3-input w3-border" name="couponCode">
+			  <input type="text" maxlength="5" class="w3-input w3-border" name="couponCode">
 			  </div>
 			</div>
 			<div class="w3-container w3-center">
@@ -592,7 +591,7 @@
 			</div>
 			</div>
 			<!--add footer of modal here -->
-			
+
 
 		    </div>
 		  </div>
@@ -663,32 +662,6 @@
 	</div>
 	-->
 
-	<!--Order History Modal
-	<div class="w3-container">
-	  <div id="id04" class="w3-modal w3-animate-opacity">
-		<div class="w3-modal-content w3-card-4 w3-animate-zoom">
-		  <header class="w3-container w3-teal">
-	   		<span onclick="document.getElementById('id04').style.display='none'"
-	   		class="w3-button w3-teal w3-display-topright">&times;</span>
-	   		<h2>Order History</h2>
-		  </header>
-
-		   To make modal tabs 
-		  <div class="w3-bar w3-border-bottom">
-		  	<button class="tablink w3-bar-item w3-button"
-		   onclick="openReservation(event, 'itemsSold')">Total Items Sold</button>
-		  </div>
-
-		   Tab 1 Order History Section
-
-
-
-	    </div>
-	  </div>
-	</div>
--->
-
-
 	<!--About-->
 	<div class="w3-container w3-padding-64 w3-red w3-grayscale w3-large" id="about">
   		<div class="w3-content">
@@ -712,50 +685,49 @@
 
      </div>
 
-	<footer class="w3-center w3-black w3-padding-48 w3-medium">
-		<p>Written &amp; coded by Team 3</p>
-		<p>All rights reserved.</p>
-	</footer>
+
+		<p class="remove-margin w3-center black-it">2017 &copy; All rights reserved.</p>
+
 
 <script type="text/javascript">
-//Login alert feature
-window.alert("Login credentials accepted. Welcome to Bronx Tapas. Please click OK to proceed");
 //Time stamp
 document.getElementById('time-stamp').innerHTML = Date();
 //confirmation of logout
 function confirmLogOut() {
-	window.alert("Are you sure you would like to log out? Click OK to proceed");
-	window.location = "index.html";
+	var user = confirm("Are you sure you would like to log out? Click OK to proceed");
+	if (user) {
+		window.location.href="index.html";
+	}
 }
 //Make Reservation modal
 document.getElementsByClassName("tablink")[0].click();
 function openReservation(evt, reserveInfo) {
-  var i, x, tablinks;
-  x = document.getElementsByClassName("city");
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablink");
-  for (i = 0; i < x.length; i++) {
-    tablinks[i].classList.remove("w3-light-grey");
-  }
-  document.getElementById(reserveInfo).style.display = "block";
-  evt.currentTarget.classList.add("w3-light-grey");
+	var i, x, tablinks;
+	x = document.getElementsByClassName("city");
+	for (i = 0; i < x.length; i++) {
+		x[i].style.display = "none";
+	}
+	tablinks = document.getElementsByClassName("tablink");
+	for (i = 0; i < x.length; i++) {
+		tablinks[i].classList.remove("w3-light-grey");
+	}
+	document.getElementById(reserveInfo).style.display = "block";
+	evt.currentTarget.classList.add("w3-light-grey");
 }
 //Menu tabs
 function openMenu(evt, menuName) {
 	var i, x, tablinks;
-  	x = document.getElementsByClassName("menu");
-  	for (i = 0; i < x.length; i++) {
-    	x[i].style.display = "none";
-  	}
-  	tablinks = document.getElementsByClassName("tablink");
-  	for (i = 0; i < x.length; i++) {
-  		tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
-  	}
-  	document.getElementById(menuName).style.display = "block";
-  	evt.currentTarget.firstElementChild.className += " w3-red";
-  	}
+	x = document.getElementsByClassName("menu");
+	for (i = 0; i < x.length; i++) {
+		x[i].style.display = "none";
+	}
+	tablinks = document.getElementsByClassName("tablink");
+	for (i = 0; i < x.length; i++) {
+		tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+	}
+	document.getElementById(menuName).style.display = "block";
+	evt.currentTarget.firstElementChild.className += " w3-red";
+}
 document.getElementById("myLink").click();
 //Google Maps
 function myMap() {
@@ -769,7 +741,7 @@ function myMap() {
 		position: myCenter,
 	});
 	marker.setMap(map);
-	}
+}
 function calcOrderTotal() {
 	//alert("test");
 	var ordertotal = 0;
@@ -796,8 +768,8 @@ function calcOrderTotal() {
 		subtotal-=10;
 		document.getElementById("discountLocation").innerHTML = -10.00;
 	}else{
-	    	document.getElementById("discountLocation").innerHTML = 0.00;
-    	}
+		document.getElementById("discountLocation").innerHTML = 0.00;
+	}
 	taxtotal = (subtotal * tax).toFixed(2);
 	document.getElementById("taxLocation").innerHTML = taxtotal.toString();
 	tip = (subtotal * tipPercentage).toFixed(2);
@@ -832,8 +804,8 @@ function calcTakeOutOrderTotal() {
 		subtotal-=10;
 		document.getElementById("takeoutdiscountLocation").innerHTML = -10.00;
 	}else{
-	    	document.getElementById("takeoutdiscountLocation").innerHTML = 0.00;
-    	}
+		document.getElementById("takeoutdiscountLocation").innerHTML = 0.00;
+	}
 	taxtotal = (subtotal * tax).toFixed(2);
 	document.getElementById("takeouttaxLocation").innerHTML = taxtotal.toString();
 	tip = (subtotal * tipPercentage).toFixed(2);
@@ -843,119 +815,119 @@ function calcTakeOutOrderTotal() {
 	//alert("total order price: $" + ordertotal);
 }
 function addToTakeOutCheckout(ele){
-  var iList = document.getElementById("takeoutitemlist");
-  var itemN = document.getElementsByClassName("takeoutitemname");
-  var id = ele.id;
-  var incart = false;
-  for(x = 0; x < itemN.length ; x++){
-    console.log("This for loop");
-    console.log(itemN.length);
-    if(itemN[x].value == id){
-      alert("This item is already in the cart. Please change quantity in the checkout area.");
-      incart = true;
-    }
-  }
-  if (!incart){
-    var row = iList.insertRow();
-    var namecell = row.insertCell(0);
-    var quantitycell = row.insertCell(1);
-    var pricecell = row.insertCell(2);
-    console.log('area element id = ' + id);
-    namecell.innerHTML = "<input class='takeoutitemname' type='text' name='item' value='pasta'>";
-    quantitycell.innerHTML = "<input class='takeoutitemquantity' type='number' name='quantity' value='1'>";
-    pricecell.innerHTML = "<input class='takeoutitemprice' type='number' name='price' value='6'>";
-    namecell.getElementsByClassName("takeoutitemname")[0].value = id;
-  }
+	var iList = document.getElementById("takeoutitemlist");
+	var itemN = document.getElementsByClassName("takeoutitemname");
+	var id = ele.id;
+	var incart = false;
+	for(x = 0; x < itemN.length ; x++){
+		console.log("This for loop");
+		console.log(itemN.length);
+		if(itemN[x].value == id){
+			alert("This item is already in the cart. Please change quantity in the checkout area.");
+			incart = true;
+		}
+	}
+	if (!incart){
+		var row = iList.insertRow();
+		var namecell = row.insertCell(0);
+		var quantitycell = row.insertCell(1);
+		var pricecell = row.insertCell(2);
+		console.log('area element id = ' + id);
+		namecell.innerHTML = "<input class='takeoutitemname' type='text' name='item' value='pasta'>";
+		quantitycell.innerHTML = "<input class='takeoutitemquantity' type='number' name='quantity' value='1'>";
+		pricecell.innerHTML = "<input class='takeoutitemprice' type='number' name='price' value='6'>";
+		namecell.getElementsByClassName("takeoutitemname")[0].value = id;
+	}
 }
 function addToCheckout(ele){
-  var iList = document.getElementById("itemlist");
-  var itemN = document.getElementsByClassName("itemname");
-  var id = ele.id;
-  var incart = false;
-  for(x = 0; x < itemN.length ; x++){
-    console.log("This for loop");
-    console.log(itemN.length);
-    if(itemN[x].value == id){
-      alert("This item is already in the cart. Please change quantity in the checkout area.");
-      incart = true;
-    }
-  }
-  if (!incart){
-    var row = iList.insertRow();
-    var namecell = row.insertCell(0);
-    var quantitycell = row.insertCell(1);
-    var pricecell = row.insertCell(2);
-    console.log('area element id = ' + id);
-    namecell.innerHTML = "<input class='itemname' type='text' name='item' value='pasta'>";
-    quantitycell.innerHTML = "<input class='itemquantity' type='number' name='quantity' value='1'>";
-    pricecell.innerHTML = "<input class='itemprice' type='number' name='price' value='6'>";
-    namecell.getElementsByClassName("itemname")[0].value = id;
-  }
+	var iList = document.getElementById("itemlist");
+	var itemN = document.getElementsByClassName("itemname");
+	var id = ele.id;
+	var incart = false;
+	for(x = 0; x < itemN.length ; x++){
+		console.log("This for loop");
+		console.log(itemN.length);
+		if(itemN[x].value == id){
+			alert("This item is already in the cart. Please change quantity in the checkout area.");
+			incart = true;
+		}
+	}
+	if (!incart){
+		var row = iList.insertRow();
+		var namecell = row.insertCell(0);
+		var quantitycell = row.insertCell(1);
+		var pricecell = row.insertCell(2);
+		console.log('area element id = ' + id);
+		namecell.innerHTML = "<input class='itemname' type='text' name='item' value='pasta'>";
+		quantitycell.innerHTML = "<input class='itemquantity' type='number' name='quantity' value='1'>";
+		pricecell.innerHTML = "<input class='itemprice' type='number' name='price' value='6'>";
+		namecell.getElementsByClassName("itemname")[0].value = id;
+	}
 }
 function updateValueresName() {
-    var x = document.getElementById("reservationNameid").value;
-    document.getElementById("reservationNameid").value = x;
-    console.log(x);
+	var x = document.getElementById("reservationNameid").value;
+	document.getElementById("reservationNameid").value = x;
+	console.log(x);
 }
 function updateValueresNumb() {
-    var x = document.getElementById("reservationNumbid").value;
-    document.getElementById("reservationNumbid").value = x;
-    console.log(x);
+	var x = document.getElementById("reservationNumbid").value;
+	document.getElementById("reservationNumbid").value = x;
+	console.log(x);
 }
 function updateValueresTime() {
-    var x = document.getElementById("reservationTimeid").value;
-    document.getElementById("reservationTimeid").value = x;
-    console.log(x);
+	var x = document.getElementById("reservationTimeid").value;
+	document.getElementById("reservationTimeid").value = x;
+	console.log(x);
 }
 function updateValueresTableNum() {
-    var x = document.getElementById("reservationTableid");
-		var currentSelected = x.options[x.selectedIndex].text;
-    //document.getElementById("reservationTableid").value = currentSelected;
-    console.log(currentSelected);
-		return currentSelected;
+	var x = document.getElementById("reservationTableid");
+	var currentSelected = x.options[x.selectedIndex].text;
+	//document.getElementById("reservationTableid").value = currentSelected;
+	console.log(currentSelected);
+	return currentSelected;
 }
 function updateValueresTableStatus() {
-		var x = document.getElementById("reservationTableAvailid");
-		var currentSelected = x.options[x.selectedIndex].text;
-    //document.getElementById("reservationTableAvailid").value = currentSelected;
-    console.log(currentSelected);
-		return currentSelected;
+	var x = document.getElementById("reservationTableAvailid");
+	var currentSelected = x.options[x.selectedIndex].text;
+	//document.getElementById("reservationTableAvailid").value = currentSelected;
+	console.log(currentSelected);
+	return currentSelected;
 }
 function nextTab(){
 }
 function addToReservation(ele){
 	console.log("in add Reservation");
 	var rList = document.getElementById("reservationlist");
-  	var reserveN = document.getElementsByClassName("reservationname");
-  	var id = ele.id;
-  	var incart = false;
-  	for(x = 0; x < reserveN.length ; x++){
-   		console.log("This for loop");
-    	console.log(reserveN.length);
-    	if(reserveN[x].value == id){
-      		alert("This item is already in the cart. Please change quantity in the checkout area.");
-      		incart = true;
-    	}
-  	}
-  	if (!incart){
-    var row = rList.insertRow();
-    var namecell = row.insertCell(0);
-    var partyNumbcell = row.insertCell(1);
-    var dateTimecell = row.insertCell(2);
+	var reserveN = document.getElementsByClassName("reservationname");
+	var id = ele.id;
+	var incart = false;
+	for(x = 0; x < reserveN.length ; x++){
+		console.log("This for loop");
+		console.log(reserveN.length);
+		if(reserveN[x].value == id){
+			alert("This item is already in the cart. Please change quantity in the checkout area.");
+			incart = true;
+		}
+	}
+	if (!incart){
+		var row = rList.insertRow();
+		var namecell = row.insertCell(0);
+		var partyNumbcell = row.insertCell(1);
+		var dateTimecell = row.insertCell(2);
 		var tableNum = row.insertCell(3);
 		var tableStatus = row.insertCell(4);
-    console.log('area element id = ' + id);
-    namecell.innerHTML = "<input class='reservationName' type='text' name='name' value='pasta'>";
-    partyNumbcell.innerHTML = "<input class='reservationNumb' type='number' name='quantity' value='1'>";
-    dateTimecell.innerHTML = "<input class='reservationTime' type='datetime-local' name='date' value='6'>";
+		console.log('area element id = ' + id);
+		namecell.innerHTML = "<input class='reservationName' type='text' name='name' value='pasta'>";
+		partyNumbcell.innerHTML = "<input class='reservationNumb' type='number' name='quantity' value='1'>";
+		dateTimecell.innerHTML = "<input class='reservationTime' type='datetime-local' name='date' value='6'>";
 		tableNum.innerHTML = "<input class='reservationTableNumb' type='text' name='table_quantity' value='1'>";
 		tableStatus.innerHTML = "<input class='reservationTableStatus' type='text' name='table_status' value='pasta'>";
-    namecell.getElementsByClassName("reservationName")[0].value = document.getElementById("reservationNameid").value;
-    partyNumbcell.getElementsByClassName("reservationNumb")[0].value = document.getElementById("reservationNumbid").value;
-    dateTimecell.getElementsByClassName("reservationTime")[0].value = document.getElementById("reservationTimeid").value;
+		namecell.getElementsByClassName("reservationName")[0].value = document.getElementById("reservationNameid").value;
+		partyNumbcell.getElementsByClassName("reservationNumb")[0].value = document.getElementById("reservationNumbid").value;
+		dateTimecell.getElementsByClassName("reservationTime")[0].value = document.getElementById("reservationTimeid").value;
 		tableNum.getElementsByClassName("reservationTableNumb")[0].value = updateValueresTableNum();
 		tableStatus.getElementsByClassName("reservationTableStatus")[0].value = updateValueresTableStatus();
-  }
+	}
 }
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0o8l3ooUMX8PC_EpezaSiGpTmHkPlzMg&callback=myMap"></script>
