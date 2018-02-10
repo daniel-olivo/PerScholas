@@ -1,6 +1,6 @@
 # PerScholas Point of Sales Website Project
 
-https://dolivo1980.github.io/PerScholas/
+https://daniel-olivo.github.io/PerScholas/
 
 user login: 123
 
