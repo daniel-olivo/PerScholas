@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=Bellefair|Lemonada|Lobster|Tangerine');
+body, html {
+  height: 100%;
+}
+.menu {
+  display: none;
+}
+.restimg {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("http://www.ghmhotels.com/wp-content/uploads/CMU-Dining-The-Beach-Restaurant-Interior.jpg");
+  min-height: 100%;
+}
+#login-right {
+  float: right;
+}
+#homeTitle {
+  font-size:100px;
+  font-family: Bellefair;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+.remove-margin {
+  margin: 0;
+}
+
+.black-it {
+  color: white;
+  background: black;
+  padding: 5px;
+}
